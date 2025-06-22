@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amir & Nabila: Our Love Story 💖</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styles & Reset */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Comfortaa', cursive; /* Modern, rounded font */
+            background-color: black; /* Black background */
+            color: #FFC0CB; /* Light pink text */
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            overflow-x: hidden;
+            position: relative;
+            border: 5px solid #FF69B4; /* Pink border */
+        }
+
+        /* Background Sparkle/Glow */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 180vmax; /* Larger glow */
+            height: 180vmax;
+            background: radial-gradient(circle at center, #FFECF7 0%, transparent 70%); /* Very soft, almost white glow */
+            transform: translate(-50%, -50%);
+            z-index: 0;
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        /* Header */
+        h1 {
+            font-family: 'Dancing Script', cursive; /* Elegant, handwritten style */
+            font-size: clamp(2.5rem, 8vw, 4.5rem); /* Responsive font size */
+            margin-bottom: 40px;
+            color: #FFC0CB; /* Light pink */
+            text-shadow: 0 5px 20px rgba(0, 0, 0, 0.35); /* Prominent, soft shadow */
+            animation: fadeInDown 1.5s ease-out forwards;
+            position: relative;
+            z-index: 2;
+            letter-spacing: 0.08em;
+            padding: 10px 25px;
+            border-radius: 20px;
+            background: rgba(255, 192, 203, 0.25); /* Light pink translucent background */
+            backdrop-filter: blur(8px); /* Stronger frosted glass */
+            border: 2px solid rgba(255, 192, 203, 0.4); /* Soft pink border */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Container for cards */
+        .container {
+            display: flex;
+            flex-direction: column; /* Stacks vertically on all screens */
+            align-items: center;
+            gap: 30px; /* Space between cards */
+            z-index: 2;
+            position: relative;
+            width: 100%; /* Full width */
+            max-width: 480px; /* Max width for larger screens */
+            margin: 0 auto;
+        }
+
+        /* Photo Card Styling */
+        .photo-card {
+            background: #121212; /* Darker background */
+            border-radius: 25px; /* Softer rounding */
+            overflow: hidden;
+            width: 95%; /* Responsive width */
+            max-width: 450px; /* Max width for cards */
+            box-shadow:
+                0 10px 25px rgba(255, 105, 180, 0.4), /* Diffused shadow */
+                inset 0 0 15px #FFD9EB; /* Gentle inner glow */
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease; /* Bouncier transition */
+            border: 3px solid #FF69B4; /* Pink border */
+            position: relative;
+            cursor: pointer;
+        }
+
+        .photo-card:hover {
+            transform: translateY(-8px) scale(1.05) rotate(-1deg); /* Lift, slightly enlarge, and rotate */
+            box-shadow:
+                0 18px 40px rgba(255, 20, 147, 0.7), /* More intense hover shadow */
+                inset 0 0 20px #FF9AC9;
+            border-color: #FF6EB4; /* Vibrant border on hover */
+        }
+
+        .photo-card::after { /* Sparkle overlay */
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.7) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            border-radius: 25px; /* Match card border-radius */
+        }
+
+        .photo-card:hover::after {
+            opacity: 1;
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-bottom: 7px solid #FF8FD0; /* Soft, vibrant border below image */
+            border-radius: 25px 25px 0 0; /* Match card top corners */
+            filter: drop-shadow(0 3px 8px rgba(255, 20, 147, 0.3)); /* Soft drop shadow */
+            transition: filter 0.3s ease;
+        }
+
+        .photo-card:hover img {
+            filter: drop-shadow(0 6px 12px rgba(255, 20, 147, 0.5));
+        }
+
+        .caption {
+            padding: 20px 15px;
+            font-size: clamp(1.2rem, 4vw, 1.6rem); /* Responsive caption font size */
+            font-weight: 700;
+            color: #FFC0CB; /* Light pink */
+            letter-spacing: 0.03em;
+            user-select: none;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); /* Very subtle text shadow */
+        }
+
+        /* --- New styles for Amir & Nabila --- */
+        .couple-section {
+            background: linear-gradient(135deg, #FFC0CB, #FF69B4); /* Gradient background */
+            border-radius: 30px;
+            padding: 30px;
+            margin-top: 50px;
+            width: 95%;
+            max-width: 600px;
+            box-shadow: 0 15px 30px rgba(255, 105, 180, 0.6), inset 0 0 20px rgba(255, 255, 255, 0.8);
+            position: relative;
+            z-index: 2;
+            animation: scaleIn 1.2s ease-out forwards;
+            overflow: hidden; /* For heart bursts */
+            border: 5px solid #FFD9EB;
+        }
+
+        .couple-section h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(2rem, 7vw, 3.5rem);
+            color: #8B0000; /* Dark Red */
+            margin-bottom: 20px;
+            text-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            position: relative;
+        }
+
+        .couple-names {
+            font-family: 'Comfortaa', sans-serif;
+            /* Changed font-size here */
+            font-size: clamp(1.8rem, 6vw, 3rem); /* Smaller font size for Amir & Nabila */
+            font-weight: bold;
+            color: white; /* White text for names */
+            margin-bottom: 20px;
+            letter-spacing: 0.1em;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .couple-names span {
+            display: inline-block;
+            padding: 0 10px;
+            animation: bounceIn 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+        }
+
+        .couple-names .ampersand {
+            font-size: clamp(1.2rem, 4vw, 2rem); /* Adjusted ampersand size to match */
+            color: #DC143C; /* Crimson for the ampersand */
+            margin: 0 10px;
+            animation: rotateHeart 2s infinite alternate ease-in-out;
+        }
+
+        .love-message {
+            font-size: clamp(1.1rem, 3.5vw, 1.5rem);
+            color: #8B0000; /* Dark Red */
+            line-height: 1.6;
+            padding: 0 15px;
+            margin-bottom: 25px;
+            font-weight: 500;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .countdown-timer {
+            font-family: 'Comfortaa', monospace;
+            font-size: clamp(1.3rem, 4vw, 2rem);
+            color: #DC143C; /* Crimson */
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 15px;
+            padding: 10px 20px;
+            display: inline-block;
+            margin-top: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            animation: pulse 2s infinite alternate;
+        }
+
+        .countdown-timer span {
+            font-weight: bold;
+            color: #8B0000;
+        }
+
+        /* Heart Burst on click for couple section */
+        .couple-section .heart-burst-particle {
+            position: absolute;
+            background-color: #DC143C; /* Crimson heart */
+            width: 15px;
+            height: 15px;
+            transform: rotate(-45deg);
+            border-radius: 0 50% 50% 50%;
+            animation: heartBurst 1.5s ease-out forwards;
+            opacity: 0;
+            z-index: 10;
+        }
+        .couple-section .heart-burst-particle::before,
+        .couple-section .heart-burst-particle::after {
+            content: '';
+            width: 15px;
+            height: 15px;
+            position: absolute;
+            background-color: #DC143C;
+            border-radius: 50%;
+        }
+        .couple-section .heart-burst-particle::before {
+            top: -7.5px;
+            left: 0;
+        }
+        .couple-section .heart-burst-particle::after {
+            top: 0;
+            left: 7.5px;
+        }
+
+        @keyframes heartBurst {
+            0% { opacity: 1; transform: translate(0, 0) rotate(-45deg) scale(0.5); }
+            100% { opacity: 0; transform: translate(var(--x), var(--y)) rotate(var(--rot)) scale(1.5); }
+        }
+
+
+        /* Footer Styling */
+        .footer-text {
+            margin-top: 50px; /* Space above the footer */
+            font-size: clamp(0.9rem, 2.5vw, 1.1rem); /* Responsive font size */
+            color: #FFC0CB; /* Light pink */
+            opacity: 0.8;
+            position: relative;
+            z-index: 2;
+            padding: 10px;
+            letter-spacing: 0.02em;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            0% { opacity: 0; transform: translateY(-60px) scale(0.9); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        @keyframes floatHeart {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0.9; }
+            25% { transform: translateY(-10px) rotate(5deg); opacity: 1; }
+            50% { transform: translateY(-20px) rotate(-5deg); opacity: 0.9; }
+            75% { transform: translateY(-10px) rotate(10deg); opacity: 1; }
+            100% { transform: translateY(0) rotate(0deg); opacity: 0.9; }
+        }
+
+        @keyframes scaleIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0.5); opacity: 0; }
+            70% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes rotateHeart {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+            50% { transform: scale(1.03); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+            100% { transform: scale(1); box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        }
+
+        /* Floating Hearts Container */
+        #heart-container {
+            pointer-events: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .heart-particle {
+            position: absolute;
+            width: 25px; /* Size of hearts */
+            height: 25px;
+            background-color: #FFC0CB; /* Light pink heart */
+            transform: rotate(-45deg); /* To make it heart-shaped */
+            opacity: 0.8;
+            animation-name: floatHeart;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+            filter: drop-shadow(0 0 4px rgba(255, 105, 180, 0.6));
+            will-change: transform, opacity;
+        }
+        .heart-particle::before,
+        .heart-particle::after {
+            content: '';
+            width: 25px;
+            height: 25px;
+            position: absolute;
+            background-color: #FFC0CB;
+            border-radius: 50%;
+        }
+        .heart-particle::before {
+            top: -12.5px;
+            left: 0;
+        }
+        .heart-particle::after {
+            top: 0;
+            left: 12.5px;
+        }
+
+        /* Confetti Burst (on click) */
+        .confetti-particle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: var(--confetti-color, #FF6EB4); /* Variable color for confetti */
+            border-radius: 50%;
+            animation: confettiFall 1.5s ease-out forwards;
+            opacity: 0;
+            z-index: 10;
+        }
+
+        @keyframes confettiFall {
+            0% { opacity: 1; transform: translate(0, 0) rotate(0deg); }
+            100% { opacity: 0; transform: translate(var(--x), var(--y)) rotate(var(--rot)); }
+        }
+
+    </style>
+</head>
+<body>
+    <h1>My Sweetheart & Her World! 💖</h1>
+
+    <div class="container">
+        <div class="photo-card" id="babyCard">
+            <img src="https://i.ibb.co/zHrc72Zm/image.png" alt="Cute Baby" />
+            <div class="caption">My dear little prince 🍼</div>
+        </div>
+
+        <div class="photo-card" id="mommyCard">
+            <img src="https://i.ibb.co/svCbdTkh/22561415047.png" alt="Mommy" />
+            <div class="caption">And her amazing, beautiful mommy ❤️</div>
+        </div>
+    </div>
+
+    <div class="couple-section" id="loveSection">
+        <h2>Our Beautiful Journey</h2>
+        <div class="couple-names">
+            <span>AMIR</span>
+            <span class="ampersand">❤️</span>
+            <span>NABILA</span>
+        </div>
+        <p class="love-message">
+            "Every moment with you is a cherished memory, a whispered dream, and a promise of forever. You are my sunshine, my guiding star, and the love that fills my heart."
+        </p>
+        <div class="countdown-timer" id="loveCountdown">
+            Together for: <span id="days">0</span> days, <span id="hours">0</span> hours, <span id="minutes">0</span> minutes, <span id="seconds">0</span> seconds
+        </div>
+    </div>
+    <div id="heart-container"></div>
+
+    <p class="footer-text">DEVELOPER BY BAPPY</p>
+
+    <script>
+        const heartContainer = document.getElementById('heart-container');
+        const babyCard = document.getElementById('babyCard');
+        const mommyCard = document.getElementById('mommyCard');
+        const loveSection = document.getElementById('loveSection'); // Get the new love section
+        const heartCount = 10; // Number of floating hearts
+        const confettiColors = ['#FFC0CB', '#FFD1EE', '#FFABDC', '#FF6EB4', '#FF8FD0']; // Pink color palette for confetti
+        const loveStart = new Date('2019-01-15T00:00:00'); // Set your actual start date of the relationship here (YYYY-MM-DDTHH:MM:SS)
+
+        function randomRange(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+
+        // Generate Floating Hearts
+        for (let i = 0; i < heartCount; i++) {
+            const heart = document.createElement('div');
+            heart.classList.add('heart-particle');
+
+            heart.style.top = `${randomRange(10, 90)}vh`;
+            heart.style.left = `${randomRange(5, 95)}vw`;
+
+            const duration = randomRange(4, 8);
+            const delay = randomRange(0, 6);
+            heart.style.animationDuration = `${duration}s`;
+            heart.style.animationDelay = `${delay}s`;
+
+            const scale = randomRange(0.8, 1.2);
+            heart.style.transform = `scale(${scale}) rotate(-45deg)`; /* Keep heart shape */
+
+            heartContainer.appendChild(heart);
+        }
+
+        // Confetti on Card Click
+        function createConfetti(x, y) {
+            const confettiParticles = 25; // Number of confetti pieces
+            for (let i = 0; i < confettiParticles; i++) {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti-particle');
+                confetti.style.left = `${x}px`;
+                confetti.style.top = `${y}px`;
+
+                const angle = randomRange(0, 2 * Math.PI);
+                const distance = randomRange(30, 100);
+                const endX = x + distance * Math.cos(angle);
+                const endY = y + distance * Math.sin(angle) + randomRange(50, 120); // Fall downwards
+
+                confetti.style.setProperty('--x', `${endX - x}px`);
+                confetti.style.setProperty('--y', `${endY - y}px`);
+                confetti.style.setProperty('--rot', `${randomRange(0, 720)}deg`);
+                confetti.style.setProperty('--confetti-color', confettiColors[Math.floor(randomRange(0, confettiColors.length))]);
+
+                document.body.appendChild(confetti);
+
+                confetti.addEventListener('animationend', () => {
+                    confetti.remove();
+                });
+            }
+        }
+
+        // Heart burst on Couple Section Click
+        function createHeartBurst(x, y) {
+            const heartBurstParticles = 15; // Number of heart burst pieces
+            const colors = ['#DC143C', '#FF6347', '#FF1493']; // Red, Tomato, DeepPink
+            for (let i = 0; i < heartBurstParticles; i++) {
+                const heart = document.createElement('div');
+                heart.classList.add('heart-burst-particle');
+                heart.style.left = `${x}px`;
+                heart.style.top = `${y}px`;
+                heart.style.backgroundColor = colors[Math.floor(randomRange(0, colors.length))]; // Random color
+
+                // Randomize heart shape elements for different colors
+                heart.style.setProperty('--heart-color', heart.style.backgroundColor);
+                heart.style.setProperty('--heart-top-color', heart.style.backgroundColor);
+                heart.style.setProperty('--heart-left-color', heart.style.backgroundColor);
+
+
+                const angle = randomRange(0, 2 * Math.PI);
+                const distance = randomRange(20, 80);
+                const endX = x + distance * Math.cos(angle);
+                const endY = y + distance * Math.sin(angle) - randomRange(50, 100); // Burst upwards and outwards
+
+                heart.style.setProperty('--x', `${endX - x}px`);
+                heart.style.setProperty('--y', `${endY - y}px`);
+                heart.style.setProperty('--rot', `${randomRange(0, 720)}deg`);
+
+                loveSection.appendChild(heart);
+
+                heart.addEventListener('animationend', () => {
+                    heart.remove();
+                });
+            }
+        }
+
+
+        babyCard.addEventListener('click', (event) => {
+            createConfetti(event.clientX, event.clientY);
+        });
+
+        mommyCard.addEventListener('click', (event) => {
+            createConfetti(event.clientX, event.clientY);
+        });
+
+        // Add event listener for the new love section
+        loveSection.addEventListener('click', (event) => {
+            createHeartBurst(event.clientX - loveSection.getBoundingClientRect().left, event.clientY - loveSection.getBoundingClientRect().top);
+        });
+
+        // Countdown Timer Logic
+        function updateLoveCountdown() {
+            const now = new Date();
+            const diff = now.getTime() - loveStart.getTime();
+
+            const seconds = Math.floor(diff / 1000);
+            const minutes = Math.floor(seconds / 60);
+            const hours = Math.floor(minutes / 60);
+            const days = Math.floor(hours / 24);
+
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours % 24;
+            document.getElementById('minutes').textContent = minutes % 60;
+            document.getElementById('seconds').textContent = seconds % 60;
+        }
+
+        updateLoveCountdown(); // Initial call
+        setInterval(updateLoveCountdown, 1000); // Update every second
+    </script>
+</body>
+</html>
